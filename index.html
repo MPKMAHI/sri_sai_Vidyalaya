@@ -36,7 +36,7 @@
     <header class="header" id="header">
         <div class="container navbar-container">
             <a href="#home" class="logo" id="logoLink">
-                <span class="logo-icon">SSV</span>
+                <img src="./images/logo.jpeg" alt="Sri Sai Vidyalaya High School Logo" class="logo-img" style="height: 48px; width: auto; border-radius: 8px; object-fit: contain;">
                 <div class="logo-text">
                     <span class="logo-title">Sri Sai Vidyalaya</span>
                     <span class="logo-subtitle">High School</span>
@@ -151,7 +151,7 @@
                     <div class="about-correspondent reveal-right">
                         <div class="correspondent-card glass-card">
                             <div class="correspondent-img-wrapper">
-                                <img src="./images/principal.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80';" alt="Correspondent Dr. S. Bala Raju" class="correspondent-img">
+                                <img src="./images/principal.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80';" alt="Correspondent Dr. S. Bala Raju" class="correspondent-img">
                             </div>
                             <div class="correspondent-info">
                                 <blockquote>
@@ -579,6 +579,81 @@
             </div>
         </section>
 
+        <!-- Events Section -->
+        <section class="events section-padding" id="events">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subtitle">School Calendar</span>
+                    <h2 class="section-title">Upcoming Events & Highlights</h2>
+                </div>
+
+                <!-- Mega Event Countdown Card -->
+                <div class="mega-event-card reveal-zoom">
+                    <div class="mega-badge">Mega Event Alert</div>
+                    <h3 class="mega-title">30th Annual Day Celebrations 2026</h3>
+                    <p class="mega-desc">Join us in celebrating three decades of excellence, innovation, and achievements with dramatic performances, orchestral music, and prize distribution by our chief guest.</p>
+                    
+                    <div id="countdownTimer" class="countdown-grid" data-date="Dec 15, 2026 17:00:00">
+                        <div class="countdown-item">
+                            <span id="days" class="countdown-num">143</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours" class="countdown-num">20</span>
+                            <span class="countdown-label">Hrs</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes" class="countdown-num">45</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds" class="countdown-num">45</span>
+                            <span class="countdown-label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="events-grid">
+                    <div class="event-card-v2 glass-card reveal-slide-up">
+                        <div class="event-badge-v2">
+                            <span class="event-day">15</span>
+                            <span class="event-month">Dec</span>
+                        </div>
+                        <div class="event-details-v2">
+                            <h4>Annual Day</h4>
+                            <span class="event-time-v2">Time: 5:00 PM - 9:00 PM</span>
+                            <p>Cultural stage plays, awards, guest talks, and interactive exhibitions.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card-v2 glass-card reveal-slide-up">
+                        <div class="event-badge-v2">
+                            <span class="event-day">22</span>
+                            <span class="event-month">Oct</span>
+                        </div>
+                        <div class="event-details-v2">
+                            <h4>Sports Meet 2026</h4>
+                            <span class="event-time-v2">Time: 8:00 AM - 4:00 PM</span>
+                            <p>Inter-house track races, relays, football matches, and gymnastics.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card-v2 glass-card reveal-slide-up">
+                        <div class="event-badge-v2">
+                            <span class="event-day">08</span>
+                            <span class="event-month">Sep</span>
+                        </div>
+                        <div class="event-details-v2">
+                            <h4>Science Exhibition</h4>
+                            <span class="event-time-v2">Time: 9:00 AM - 3:00 PM</span>
+                            <p>Tech innovations, physics experiments, biology displays, and robotics show.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Testimonials Section -->
         <section class="testimonials section-padding" id="testimonials">
             <div class="container">
@@ -853,8 +928,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col reveal-fade">
-                <a href="#home" class="footer-logo">
-                    <span class="logo-icon">SSV</span>
+                <a href="#home" class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="./images/logo.jpeg" alt="Sri Sai Vidyalaya High School Logo" class="logo-img" style="height: 40px; width: auto; border-radius: 6px; object-fit: contain;">
                     <span class="logo-title">Sri Sai Vidyalaya</span>
                 </a>
                 <p class="footer-desc">Sri Sai Vidyalaya High School (SSVHS) is dedicated to nurturing academic brilliance, ethical strength, and social leadership. We prepare students for international success.</p>
