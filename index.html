@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Sai Vidhyalaya High School | Shaping Global Leaders</title>
-    <meta name="description" content="Welcome to Sri Sai Vidhyalaya High School. A premium, modern learning environment fostering academic excellence, innovation, and holistic development. Admissions open for 2026-27.">
+    <title>Sri Sai Vidyalaya High School | Shaping Global Leaders</title>
+    <meta name="description" content="Welcome to Sri Sai Vidyalaya High School. A premium, modern learning environment fostering academic excellence, innovation, and holistic development. Admissions open for 2026-27.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
-    <div class="custom-cursor-dot" id="customCursorDot" aria-hidden="true"></div>
-
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container" aria-hidden="true">
         <div class="scroll-progress-bar" id="progressBar"></div>
@@ -42,7 +38,7 @@
             <a href="#home" class="logo" id="logoLink">
                 <span class="logo-icon">SSV</span>
                 <div class="logo-text">
-                    <span class="logo-title">Sri Sai Vidhyalaya</span>
+                    <span class="logo-title">Sri Sai Vidyalaya</span>
                     <span class="logo-subtitle">High School</span>
                 </div>
             </a>
@@ -54,6 +50,7 @@
                 <a href="#facilities" class="nav-link">Facilities</a>
                 <a href="#faculty" class="nav-link">Faculty</a>
                 <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#awards" class="nav-link">Awards</a>
                 <a href="#notice-board" class="nav-link">Notices</a>
                 <a href="#events" class="nav-link">Events</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
@@ -80,8 +77,8 @@
                     </svg>
                 </button>
 
-                <!-- Hamburger Menu Button -->
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <!-- Mobile Hamburger Menu Button -->
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
                     <span class="bar bar-1"></span>
                     <span class="bar bar-2"></span>
                     <span class="bar bar-3"></span>
@@ -93,7 +90,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="images/hero.jpg" alt="Sri Sai Vidhyalaya High School Students" class="hero-image">
+            <img src="./images/hero.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80';" alt="Sri Sai Vidyalaya High School Students" class="hero-image">
             <div class="hero-overlay"></div>
         </div>
         
@@ -131,7 +128,7 @@
                 <div class="about-grid">
                     <div class="about-info reveal-left">
                         <h3>Our History</h3>
-                        <p>Founded in 1996, Sri Sai Vidhyalaya High School has been at the forefront of quality education for three decades. What started as a modest campus with 50 students has blossomed into a premier educational hub, offering world-class infrastructure and holistic learning approaches.</p>
+                        <p>Founded in 1996, Sri Sai Vidyalaya High School has been at the forefront of quality education for three decades. What started as a modest campus with 50 students has blossomed into a premier educational hub, offering world-class infrastructure and holistic learning approaches.</p>
                         
                         <div class="mission-vision">
                             <div class="mv-card glass-card">
@@ -151,17 +148,17 @@
                         </div>
                     </div>
                     
-                    <div class="about-principal reveal-right">
-                        <div class="principal-card glass-card">
-                            <div class="principal-img-wrapper">
-                                <img src="images/principal.jpg" alt="Principal Dr. Victoria Sterling" class="principal-img">
+                    <div class="about-correspondent reveal-right">
+                        <div class="correspondent-card glass-card">
+                            <div class="correspondent-img-wrapper">
+                                <img src="./images/principal.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80';" alt="Correspondent" class="correspondent-img">
                             </div>
-                            <div class="principal-info">
+                            <div class="correspondent-info">
                                 <blockquote>
                                     "Education is not the learning of facts, but the training of the mind to think. At SSVHS, we inspire minds to reach their full potential."
                                 </blockquote>
-                                <h4>Dr. Victoria Sterling</h4>
-                                <span class="designation">Principal, SSVHS</span>
+                                <h4>Correspondent</h4>
+                                <span class="designation">Correspondent, SSVHS</span>
                             </div>
                         </div>
                     </div>
@@ -179,45 +176,64 @@
                         </div>
                         <div class="why-card glass-card text-center reveal-zoom">
                             <div class="why-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                             </div>
-                            <h4>Robotics & Innovation</h4>
-                            <p>Early coding education, smart lab environments, and technological readiness.</p>
+                            <h4>Global Exposure</h4>
+                            <p>International student exchange initiatives, MUN conferences, and global Olympiads.</p>
                         </div>
                         <div class="why-card glass-card text-center reveal-zoom">
                             <div class="why-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             </div>
-                            <h4>Global Mentors</h4>
-                            <p>Highly qualified international faculty dedicated to student growth.</p>
+                            <h4>Expert Mentors</h4>
+                            <p>Passionate educators with advanced degrees committed to individual student care.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics Section -->
-                <div class="stats-container glass-card" id="statsSection">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="2500">0</div>
-                        <div class="stat-label">Students Enrolled</div>
+        <!-- Stats Counter Section -->
+        <section class="stats section-padding" id="statsSection" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%) !important; color: #ffffff !important;">
+            <div class="container">
+                <div class="stats-container">
+                    <div class="stats-item glass-card reveal-zoom">
+                        <div class="stats-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <div class="stats-number" data-target="12000">12000</div>
+                        <p class="stats-label">Enrolled Students</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="150">0</div>
-                        <div class="stat-label">Expert Educators</div>
+
+                    <div class="stats-item glass-card reveal-zoom">
+                        <div class="stats-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div class="stats-number" data-target="100">100</div>
+                        <p class="stats-label">Qualified Teachers</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="30">0</div>
-                        <div class="stat-label">Years of Excellence</div>
+
+                    <div class="stats-item glass-card reveal-zoom">
+                        <div class="stats-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <div class="stats-number stats-percent" data-target="100">100</div>
+                        <p class="stats-label">Pass Percentage (%)</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">Board Results (%)</div>
+
+                    <div class="stats-item glass-card reveal-zoom">
+                        <div class="stats-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <div class="stats-number" data-target="20">20</div>
+                        <p class="stats-label">National Awards</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Academics Section -->
-        <section class="academics section-padding section-bg" id="academics">
+        <section class="academics section-padding" id="academics">
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">Academic Programs</span>
@@ -225,91 +241,32 @@
                 </div>
 
                 <div class="academics-grid">
-                    <!-- Pre Primary -->
                     <div class="academic-card glass-card reveal-slide-up">
-                        <div class="academic-badge pre-primary">Ages 3-5</div>
-                        <div class="academic-header">
-                            <h3>Pre Primary</h3>
-                        </div>
-                        <p class="academic-desc">A play-based, nurturing introduction to school life, fostering initial curiosities and motor skills development.</p>
-                        <div class="academic-details">
-                            <h5>Key Subjects</h5>
-                            <p>Numeracy, Literacy, Phonics, Creative Arts</p>
-                            <h5>Activities</h5>
-                            <p>Storytelling, Clay Modeling, Music & Movement, Sensory Play</p>
-                        </div>
-                        <button class="btn btn-text academic-modal-trigger" data-program="pre-primary">Read More &rarr;</button>
+                        <div class="academic-badge">Grades Nursery - V</div>
+                        <h3>Primary School</h3>
+                        <p>Focusing on foundational literacy, numeracy, social skills, inquiry-based learning, and creative play.</p>
                     </div>
-
-                    <!-- Primary -->
                     <div class="academic-card glass-card reveal-slide-up">
-                        <div class="academic-badge primary">Ages 6-10</div>
-                        <div class="academic-header">
-                            <h3>Primary School</h3>
-                        </div>
-                        <p class="academic-desc">Focusing on basic competencies, analytical skills, and social development through inquiry-driven learning.</p>
-                        <div class="academic-details">
-                            <h5>Key Subjects</h5>
-                            <p>English, Mathematics, Science, Social Studies, Second Language</p>
-                            <h5>Activities</h5>
-                            <p>Abacus, Public Speaking, Swimming, Yoga, Art & Craft</p>
-                        </div>
-                        <button class="btn btn-text academic-modal-trigger" data-program="primary">Read More &rarr;</button>
+                        <div class="academic-badge">Grades VI - VIII</div>
+                        <h3>Middle School</h3>
+                        <p>Fostering analytical thinking, science experiments, language mastery, and interactive team projects.</p>
                     </div>
-
-                    <!-- Middle School -->
                     <div class="academic-card glass-card reveal-slide-up">
-                        <div class="academic-badge middle">Ages 11-13</div>
-                        <div class="academic-header">
-                            <h3>Middle School</h3>
-                        </div>
-                        <p class="academic-desc">Transitioning into complex discipline-based learning, research skills, and collaborative project execution.</p>
-                        <div class="academic-details">
-                            <h5>Key Subjects</h5>
-                            <p>Languages, Algebra, Physics, Chemistry, Biology, History, Computer Coding</p>
-                            <h5>Activities</h5>
-                            <p>Robotics Club, Debate Club, Visual Arts, Athletics, Drama</p>
-                        </div>
-                        <button class="btn btn-text academic-modal-trigger" data-program="middle">Read More &rarr;</button>
+                        <div class="academic-badge">Grades IX - X</div>
+                        <h3>Secondary School</h3>
+                        <p>Rigorous preparation for board examinations, specialized lab electives, and structured career counseling.</p>
                     </div>
-
-                    <!-- High School -->
                     <div class="academic-card glass-card reveal-slide-up">
-                        <div class="academic-badge high">Ages 14-15</div>
-                        <div class="academic-header">
-                            <h3>High School</h3>
-                        </div>
-                        <p class="academic-desc">Rigorous academic training and preparing for international secondary school certification exams.</p>
-                        <div class="academic-details">
-                            <h5>Key Subjects</h5>
-                            <p>Advanced Math, Combined Sciences, Global Perspectives, Business Studies</p>
-                            <h5>Activities</h5>
-                            <p>MUN, Coding Bootcamps, Basketball, Music Band, Social Work</p>
-                        </div>
-                        <button class="btn btn-text academic-modal-trigger" data-program="high">Read More &rarr;</button>
-                    </div>
-
-                    <!-- Senior Secondary -->
-                    <div class="academic-card glass-card reveal-slide-up">
-                        <div class="academic-badge senior">Ages 16-18</div>
-                        <div class="academic-header">
-                            <h3>Senior Secondary</h3>
-                        </div>
-                        <p class="academic-desc">Specialized streams (Science, Commerce, Humanities) preparing students for universities worldwide.</p>
-                        <div class="academic-details">
-                            <h5>Key Subjects</h5>
-                            <p>Calculus, Mechanics, Economics, Psychology, Computer Science, Literature</p>
-                            <h5>Activities</h5>
-                            <p>University Preparation, Research Internships, Leadership Camps, Football</p>
-                        </div>
-                        <button class="btn btn-text academic-modal-trigger" data-program="senior">Read More &rarr;</button>
+                        <div class="academic-badge">Grades XI - XII</div>
+                        <h3>Senior Secondary</h3>
+                        <p>Specialized Science, Commerce, and Humanities streams with integrated entrance exam coaching.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Facilities Section -->
-        <section class="facilities section-padding" id="facilities">
+        <section class="facilities section-padding section-bg" id="facilities">
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">World-class Campus</span>
@@ -317,199 +274,76 @@
                 </div>
 
                 <div class="facilities-grid">
-                    <!-- 1. Smart Classrooms -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/classroom.jpg" alt="Smart Classrooms">
+                            <img src="./images/classroom.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80';" alt="Smart Classrooms">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            </div>
                             <h4>Smart Classrooms</h4>
                             <p>Air-conditioned rooms equipped with high-definition digital smart boards and ergonomic furniture.</p>
                         </div>
                     </div>
-
-                    <!-- 2. Computer Labs -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/classroom.jpg" alt="Computer Labs">
+                            <img src="./images/classroom.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80';" alt="Computer Labs">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-                            </div>
                             <h4>Computer Labs</h4>
                             <p>High-speed internet workstations with modern software suites for computer education and project work.</p>
                         </div>
                     </div>
-
-                    <!-- 3. Robotics Lab -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/lab.jpg" alt="Robotics Lab">
+                            <img src="./images/lab.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80';" alt="Robotics Lab">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9M8 5h8"></path><circle cx="8" cy="16" r="10" transform="scale(0.1)"></circle></svg>
-                            </div>
                             <h4>Robotics Lab</h4>
                             <p>Dedicated innovation hub for learning mechanical assemblies, programming microcontrollers, and IoT.</p>
                         </div>
                     </div>
-
-                    <!-- 4. Science Laboratories -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/lab.jpg" alt="Science Laboratories">
+                            <img src="./images/lab.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80';" alt="Science Laboratories">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.25-2.5 3-2.5 5.5h20c0-2.5-1-4.25-2.5-5.5M12 2v10M8 5h8"></path></svg>
-                            </div>
                             <h4>Science Laboratories</h4>
                             <p>Fully certified Physics, Chemistry, and Biology laboratories equipped with premium testing gear.</p>
                         </div>
                     </div>
-
-                    <!-- 5. Digital Library -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/library.jpg" alt="Digital Library">
+                            <img src="./images/library.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80';" alt="Digital Library">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5v-15z"></path></svg>
-                            </div>
                             <h4>Digital Library</h4>
                             <p>An extensive storehouse of over 50,000 physical books and digital database access terminals.</p>
                         </div>
                     </div>
-
-                    <!-- 6. Indoor Sports -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/sports.jpg" alt="Indoor Sports">
+                            <img src="./images/sports.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80';" alt="Indoor Sports Arena">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
-                            </div>
-                            <h4>Indoor Sports</h4>
+                            <h4>Indoor Sports Arena</h4>
                             <p>Spacious arena for badminton, table tennis, gymnastics, chess, and dynamic board games.</p>
                         </div>
                     </div>
-
-                    <!-- 7. Outdoor Sports -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/sports.jpg" alt="Outdoor Sports">
+                            <img src="./images/sports.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80';" alt="Outdoor Athletics Track">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path><path d="M12 6v12M6 12h12"></path></svg>
-                            </div>
-                            <h4>Outdoor Sports</h4>
+                            <h4>Outdoor Athletics Track</h4>
                             <p>Standard professional athletics tracks, turf football ground, cricket pitches, and basketball courts.</p>
                         </div>
                     </div>
-
-                    <!-- 8. Swimming Pool -->
                     <div class="facility-card glass-card reveal-zoom">
                         <div class="facility-img-wrapper">
-                            <img src="images/sports.jpg" alt="Swimming Pool">
+                            <img src="./images/school.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80';" alt="Auditorium & Music Room">
                         </div>
                         <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c4-1.5 6 1.5 10 0s6-1.5 10 0M2 12c4-1.5 6 1.5 10 0s6-1.5 10 0M2 18c4-1.5 6 1.5 10 0s6-1.5 10 0"></path></svg>
-                            </div>
-                            <h4>Swimming Pool</h4>
-                            <p>An Olympic-sized, temperature-controlled, clean swimming pool with trained lifeguards.</p>
-                        </div>
-                    </div>
-
-                    <!-- 9. Music Room -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/school.jpg" alt="Music Room">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                            </div>
-                            <h4>Music Room</h4>
-                            <p>Well-stocked studio offering training in piano, guitar, drums, classical instruments, and vocals.</p>
-                        </div>
-                    </div>
-
-                    <!-- 10. Dance Studio -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/hero.jpg" alt="Dance Studio">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.12 15.88c-.68-.68-1.56-1.12-2.52-1.28L12 14c-.67 0-1.33.16-1.95.46L6.5 16.5M12 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM4 14h16"></path></svg>
-                            </div>
-                            <h4>Dance Studio</h4>
-                            <p>Spacious, mirrored flooring arena supporting training in classical, contemporary, and fusion dance.</p>
-                        </div>
-                    </div>
-
-                    <!-- 11. Medical Room -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/principal.jpg" alt="Medical Room">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                            </div>
-                            <h4>Medical Room</h4>
-                            <p>Equipped first-aid clinic with a full-time certified nurse and standby arrangements with local hospitals.</p>
-                        </div>
-                    </div>
-
-                    <!-- 12. School Transport -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/school.jpg" alt="School Transport">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><circle cx="6" cy="20" r="2"></circle><circle cx="18" cy="20" r="2"></circle></svg>
-                            </div>
-                            <h4>School Transport</h4>
-                            <p>GPS-enabled, air-conditioned bus services tracking local transit routes with emergency safety systems.</p>
-                        </div>
-                    </div>
-
-                    <!-- 13. CCTV Security -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/school.jpg" alt="CCTV Security">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                            </div>
-                            <h4>CCTV Security</h4>
-                            <p>24/7 security control room with round-the-clock camera monitoring and strict visitor registration protocols.</p>
-                        </div>
-                    </div>
-
-                    <!-- 14. Cafeteria -->
-                    <div class="facility-card glass-card reveal-zoom">
-                        <div class="facility-img-wrapper">
-                            <img src="images/hero.jpg" alt="Cafeteria">
-                        </div>
-                        <div class="facility-content">
-                            <div class="facility-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                            </div>
-                            <h4>Healthy Cafeteria</h4>
-                            <p>A hygienic cafeteria offering dietitian-approved, nutritious breakfast, lunch, and snack menus.</p>
+                            <h4>Auditorium & Music Room</h4>
+                            <p>State-of-the-art acoustics performance hall and well-stocked instruments training studio.</p>
                         </div>
                     </div>
                 </div>
@@ -517,7 +351,7 @@
         </section>
 
         <!-- Faculty Section -->
-        <section class="faculty section-padding section-bg" id="faculty">
+        <section class="faculty section-padding" id="faculty">
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">Our Mentors</span>
@@ -525,139 +359,92 @@
                 </div>
 
                 <div class="faculty-grid">
-                    <!-- Faculty 1 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher1.jpg" alt="Aishwarya Sharma" class="faculty-img">
+                            <img src="./images/teacher1.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80';" alt="Renuka Devi" class="faculty-img">
                         </div>
-                        <h4>Mrs. Aishwarya Sharma</h4>
-                        <span class="faculty-subject">Head of Sciences</span>
+                        <h4>Renuka Devi</h4>
+                        <span class="faculty-subject">Principal & Head of Mathematics</span>
                         <div class="faculty-qualifications">
-                            <p><strong>Qual:</strong> M.Sc. in Physics, B.Ed.</p>
+                            <p><strong>Qual:</strong> M.Sc. in Mathematics, B.Ed.</p>
                             <p><strong>Exp:</strong> 12+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 2 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher2.jpg" alt="David Miller" class="faculty-img">
+                            <img src="./images/teacher2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80';" alt="David Miller" class="faculty-img">
                         </div>
-                        <h4>Mr. David Miller</h4>
-                        <span class="faculty-subject">Mathematics Head</span>
+                        <h4>David Miller</h4>
+                        <span class="faculty-subject">Senior Mathematics Teacher</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> M.S. in Applied Math</p>
                             <p><strong>Exp:</strong> 10+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 3 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher3.jpg" alt="Sarah Jenkins" class="faculty-img">
+                            <img src="./images/teacher3.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';" alt="Sarah Jenkins" class="faculty-img">
                         </div>
-                        <h4>Mrs. Sarah Jenkins</h4>
+                        <h4>Sarah Jenkins</h4>
                         <span class="faculty-subject">English Literature</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> M.A. in English Lit, CELTA</p>
                             <p><strong>Exp:</strong> 15+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 4 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher4.jpg" alt="Marcus Aurelius" class="faculty-img">
+                            <img src="./images/teacher4.png" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';" alt="Ramana" class="faculty-img">
                         </div>
-                        <h4>Mr. Marcus Aurelius</h4>
-                        <span class="faculty-subject">History & Civics</span>
+                        <h4>Ramana</h4>
+                        <span class="faculty-subject">Director & Head of English</span>
                         <div class="faculty-qualifications">
-                            <p><strong>Qual:</strong> M.A. in World History</p>
-                            <p><strong>Exp:</strong> 8+ Years</p>
-                        </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                            <p><strong>Qual:</strong> M.A. in English, B.Ed.</p>
+                            <p><strong>Exp:</strong> 10+ Years</p>
                         </div>
                     </div>
-
-                    <!-- Faculty 5 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher5.jpg" alt="Zoya Rahman" class="faculty-img">
+                            <img src="./images/teacher5.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80';" alt="Zoya Rahman" class="faculty-img">
                         </div>
-                        <h4>Mrs. Zoya Rahman</h4>
+                        <h4>Zoya Rahman</h4>
                         <span class="faculty-subject">Robotics & Computer Sci.</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> M.Tech. in Robotics, B.Ed.</p>
                             <p><strong>Exp:</strong> 9+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 6 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher6.jpg" alt="Albus Dumbledore" class="faculty-img">
+                            <img src="./images/teacher6.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80';" alt="James Henderson" class="faculty-img">
                         </div>
-                        <h4>Mr. James Henderson</h4>
-                        <span class="faculty-subject">Chemistry specialist</span>
+                        <h4>James Henderson</h4>
+                        <span class="faculty-subject">Chemistry Specialist</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> Ph.D. in Chemistry</p>
                             <p><strong>Exp:</strong> 14+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 7 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher7.jpg" alt="Robert Chen" class="faculty-img">
+                            <img src="./images/teacher7.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80';" alt="Robert Chen" class="faculty-img">
                         </div>
-                        <h4>Mr. Robert Chen</h4>
+                        <h4>Robert Chen</h4>
                         <span class="faculty-subject">Music Director</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> Masters in Music Performance</p>
                             <p><strong>Exp:</strong> 11+ Years</p>
                         </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                        </div>
                     </div>
-
-                    <!-- Faculty 8 -->
                     <div class="faculty-card glass-card reveal-slide-up">
                         <div class="faculty-img-container">
-                            <img src="images/teacher8.jpg" alt="Emma Watson" class="faculty-img">
+                            <img src="./images/teacher8.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80';" alt="Emma Watson" class="faculty-img">
                         </div>
-                        <h4>Mrs. Emma Watson</h4>
+                        <h4>Emma Watson</h4>
                         <span class="faculty-subject">Head of Drama & Arts</span>
                         <div class="faculty-qualifications">
                             <p><strong>Qual:</strong> B.F.A in Acting & Directing</p>
                             <p><strong>Exp:</strong> 7+ Years</p>
-                        </div>
-                        <div class="faculty-socials">
-                            <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
                         </div>
                     </div>
                 </div>
@@ -672,7 +459,6 @@
                     <h2 class="section-title">Visual Tour of Our Campus</h2>
                 </div>
 
-                <!-- Gallery Filter Buttons -->
                 <div class="gallery-filters">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="learning">Academic & Labs</button>
@@ -681,86 +467,74 @@
                     <button class="filter-btn" data-filter="campus">Campus Life</button>
                 </div>
 
-                <!-- Gallery Grid -->
                 <div class="gallery-grid">
-                    <!-- Classrooms -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="learning">
-                        <img src="images/classroom.jpg" alt="Modern Smart Classroom with interactive displays">
+                        <img src="./images/classroom.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80';" alt="Modern Smart Classroom">
                         <div class="gallery-info">
                             <h4>Modern Classroom</h4>
                             <span class="gallery-tag">Classrooms</span>
                         </div>
                     </div>
-                    <!-- Students -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="campus">
-                        <img src="images/hero.jpg" alt="Group of smiling international students studying together">
+                        <img src="./images/hero.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80';" alt="Happy Students">
                         <div class="gallery-info">
                             <h4>Happy Students</h4>
                             <span class="gallery-tag">Students</span>
                         </div>
                     </div>
-                    <!-- Sports -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="sports">
-                        <img src="images/sports.jpg" alt="High School students racing on professional running track">
+                        <img src="./images/sports.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80';" alt="Athletics Track">
                         <div class="gallery-info">
                             <h4>Athletics Track</h4>
                             <span class="gallery-tag">Sports</span>
                         </div>
                     </div>
-                    <!-- Science Labs -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="learning">
-                        <img src="images/lab.jpg" alt="Biology student inspecting microscopic structures in lab">
+                        <img src="./images/lab.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80';" alt="Science Laboratories">
                         <div class="gallery-info">
                             <h4>Science Laboratories</h4>
                             <span class="gallery-tag">Science Labs</span>
                         </div>
                     </div>
-                    <!-- Library -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="learning">
-                        <img src="images/library.jpg" alt="Spacious, bright digital library study area">
+                        <img src="./images/library.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80';" alt="Digital Library">
                         <div class="gallery-info">
                             <h4>Digital Library</h4>
                             <span class="gallery-tag">Library</span>
                         </div>
                     </div>
-                    <!-- Annual Day -->
-                    <div class="gallery-item glass-card reveal-zoom" data-category="events">
-                        <img src="images/school.jpg" alt="Students performing on stage for the annual school day">
-                        <div class="gallery-info">
-                            <h4>Annual Day Celebrations</h4>
-                            <span class="gallery-tag">Annual Day</span>
-                        </div>
-                    </div>
-                    <!-- Cultural Events -->
-                    <div class="gallery-item glass-card reveal-zoom" data-category="events">
-                        <img src="images/hero.jpg" alt="Colorful cultural program and dance performances">
-                        <div class="gallery-info">
-                            <h4>Cultural Festivals</h4>
-                            <span class="gallery-tag">Cultural Events</span>
-                        </div>
-                    </div>
-                    <!-- School Building -->
                     <div class="gallery-item glass-card reveal-zoom" data-category="campus">
-                        <img src="images/school.jpg" alt="Sri Sai Vidhyalaya High School building architecture">
+                        <img src="./images/school.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80';" alt="Sri Sai Vidyalaya High School building architecture">
                         <div class="gallery-info">
                             <h4>School Campus Building</h4>
                             <span class="gallery-tag">School Building</span>
                         </div>
                     </div>
-                    <!-- Computer Lab -->
-                    <div class="gallery-item glass-card reveal-zoom" data-category="learning">
-                        <img src="images/classroom.jpg" alt="Students coding in modern computer lab workstations">
-                        <div class="gallery-info">
-                            <h4>High-Tech Computer Lab</h4>
-                            <span class="gallery-tag">Computer Lab</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Achievements Section -->
+        <section class="awards section-padding" id="awards">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">Our Achievements</span>
+                    <h2 class="section-title">Awards & Student Honors</h2>
+                </div>
+
+                <div class="awards-grid">
+                    <div class="award-card glass-card reveal-slide-up">
+                        <div class="award-image-wrapper">
+                            <img src="./images/award1.jpeg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80';" alt="State Government Academic Award" class="award-img">
+                            <div class="award-badge">State Honors</div>
                         </div>
-                    </div>
-                    <!-- Playground -->
-                    <div class="gallery-item glass-card reveal-zoom" data-category="sports">
-                        <img src="images/sports.jpg" alt="Children playing basketball on green turf courts">
-                        <div class="gallery-info">
-                            <h4>Turf Basketball Court</h4>
-                            <span class="gallery-tag">Playground</span>
+                        <div class="award-content">
+                            <h3>State Government Academic Excellence Award</h3>
+                            <p class="award-desc">3 students have been awarded with Rs 20000, certificate, and medal by the state govt through Dist collector sri chamakura Sreedhar for achieving 597 by two students 586 by one student.</p>
+                            <div class="award-meta">
+                                <span class="award-tag">🎓 Cash Prize: Rs 20,000</span>
+                                <span class="award-tag">🏅 Medals & Certificates</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -772,229 +546,30 @@
             <div class="container">
                 <div class="section-header">
                     <span class="subtitle">Latest Updates</span>
-                    <h2 class="section-title">Notice Board</h2>
+                    <h2 class="section-title">Notice Board & Announcements</h2>
                 </div>
 
-                <div class="notice-container glass-card">
-                    <div class="notice-header">
-                        <div class="notice-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                            <h3>Announcements & Circulars</h3>
-                        </div>
-                        <span class="ticker-status-badge">Live</span>
-                    </div>
-
-                    <!-- Scrolling Ticker Container -->
-                    <div class="notice-ticker-wrapper" id="noticeTickerWrapper">
-                        <div class="notice-ticker" id="noticeTicker">
-                            <!-- Notice 1 -->
-                            <div class="notice-item">
-                                <span class="notice-date">July 20, 2026</span>
-                                <span class="notice-badge badge-admissions">Admissions</span>
-                                <p class="notice-text"><strong>Admissions Open 2026-27:</strong> Online registrations are now open for Nursery to Grade XI. Limited seats available.</p>
-                            </div>
-                            <!-- Notice 2 -->
-                            <div class="notice-item">
-                                <span class="notice-date">July 18, 2026</span>
-                                <span class="notice-badge badge-holiday">Holiday</span>
-                                <p class="notice-text"><strong>Summer Break:</strong> School will remain closed for summer holidays from Aug 1st to Aug 15th. Offline office timings remain active.</p>
-                            </div>
-                            <!-- Notice 3 -->
-                            <div class="notice-item">
-                                <span class="notice-date">July 15, 2026</span>
-                                <span class="notice-badge badge-science">Science Fair</span>
-                                <p class="notice-text"><strong>Science Exhibition 'TechQuest 2026':</strong> Registration deadline has been extended to July 25th. Submit abstract to class teacher.</p>
-                            </div>
-                            <!-- Notice 4 -->
-                            <div class="notice-item">
-                                <span class="notice-date">July 10, 2026</span>
-                                <span class="notice-badge badge-sports">Sports</span>
-                                <p class="notice-text"><strong>Inter-School Sports Meet:</strong> Selection trials for football and swimming teams will start this Thursday at 3:00 PM.</p>
-                            </div>
-                            <!-- Notice 5 -->
-                            <div class="notice-item">
-                                <span class="notice-date">July 05, 2026</span>
-                                <span class="notice-badge badge-meeting">Meeting</span>
-                                <p class="notice-text"><strong>Parent-Teacher Association Meeting:</strong> Term-1 report card discussions scheduled for Saturday, July 28th from 9 AM to 12 PM.</p>
-                            </div>
-                            <!-- Notice 6 -->
-                            <div class="notice-item">
-                                <span class="notice-date">June 30, 2026</span>
-                                <span class="notice-badge badge-exams">Exams</span>
-                                <p class="notice-text"><strong>Mid-Term Examination:</strong> The detailed datesheets and syllabi outlines for Grades VI to XII have been uploaded to parent portals.</p>
-                            </div>
+                <div class="notice-grid">
+                    <div class="notice-card glass-card reveal-slide-up">
+                        <div class="notice-date"><span>24</span> JUL</div>
+                        <div class="notice-content">
+                            <h4>Admissions Open for Academic Year 2026-27</h4>
+                            <p>Online registrations for Nursery to Grade XI are now live. Submit forms online before August 15th.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Events Section -->
-        <section class="events section-padding" id="events">
-            <div class="container">
-                <div class="section-header">
-                    <span class="subtitle">School Calendar</span>
-                    <h2 class="section-title">Upcoming Events & Highlights</h2>
-                </div>
-
-                <!-- Featured Event: Countdown Timer -->
-                <div class="featured-event glass-card reveal-slide-up">
-                    <div class="featured-event-content">
-                        <span class="featured-badge">Mega Event Alert</span>
-                        <h3>30th Annual Day Celebrations 2026</h3>
-                        <p>Join us in celebrating three decades of excellence, innovation, and achievements with dramatic performances, orchestral music, and prize distribution by our chief guest.</p>
-                        
-                        <!-- Countdown Timer -->
-                        <div class="countdown-container" id="countdownTimer" data-date="December 15, 2026 17:00:00">
-                            <div class="countdown-box">
-                                <span class="countdown-num" id="days">00</span>
-                                <span class="countdown-label">Days</span>
-                            </div>
-                            <div class="countdown-box">
-                                <span class="countdown-num" id="hours">00</span>
-                                <span class="countdown-label">Hrs</span>
-                            </div>
-                            <div class="countdown-box">
-                                <span class="countdown-num" id="minutes">00</span>
-                                <span class="countdown-label">Mins</span>
-                            </div>
-                            <div class="countdown-box">
-                                <span class="countdown-num" id="seconds">00</span>
-                                <span class="countdown-label">Secs</span>
-                            </div>
+                    <div class="notice-card glass-card reveal-slide-up">
+                        <div class="notice-date"><span>18</span> JUL</div>
+                        <div class="notice-content">
+                            <h4>SSVHS Innovators Robotics Championship Win</h4>
+                            <p>Our robotics team secured 1st rank at the National Robotics Expo held in New Delhi.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="events-grid">
-                    <!-- Event 1 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">15</span>
-                            <span class="event-month">DEC</span>
+                    <div class="notice-card glass-card reveal-slide-up">
+                        <div class="notice-date"><span>05</span> JUL</div>
+                        <div class="notice-content">
+                            <h4>Parent-Teacher Meeting (PTM) Schedule</h4>
+                            <p>Mid-term PTM is scheduled for Saturday. Slot details sent to registered parent mobile numbers.</p>
                         </div>
-                        <div class="event-details">
-                            <h4>Annual Day</h4>
-                            <p class="event-time">Time: 5:00 PM - 9:00 PM</p>
-                            <p class="event-desc">Cultural stage plays, awards, guest talks, and interactive exhibitions.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 2 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">22</span>
-                            <span class="event-month">OCT</span>
-                        </div>
-                        <div class="event-details">
-                            <h4>Sports Meet 2026</h4>
-                            <p class="event-time">Time: 8:00 AM - 4:00 PM</p>
-                            <p class="event-desc">Inter-house track races, relays, football matches, and gymnastics.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 3 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">08</span>
-                            <span class="event-month">SEP</span>
-                        </div>
-                        <div class="event-details">
-                            <h4>Science Exhibition</h4>
-                            <p class="event-time">Time: 9:00 AM - 3:00 PM</p>
-                            <p class="event-desc">Tech innovations, physics experiments, biology displays, and robotics show.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 4 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">14</span>
-                            <span class="event-month">NOV</span>
-                        </div>
-                        <div class="event-details">
-                            <h4>Cultural Fest</h4>
-                            <p class="event-time">Time: 10:00 AM - 5:00 PM</p>
-                            <p class="event-desc">Art exhibitions, talent hunt, music competitions, and culinary stalls.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 5 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">15</span>
-                            <span class="event-month">AUG</span>
-                        </div>
-                        <div class="event-details">
-                            <h4>Independence Day</h4>
-                            <p class="event-time">Time: 7:30 AM - 10:00 AM</p>
-                            <p class="event-desc">Flag hoisting ceremony, patriotic singing, and march past by students.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 6 -->
-                    <div class="event-card glass-card reveal-slide-up">
-                        <div class="event-date-box">
-                            <span class="event-day">05</span>
-                            <span class="event-month">SEP</span>
-                        </div>
-                        <div class="event-details">
-                            <h4>Teachers Day</h4>
-                            <p class="event-time">Time: 9:00 AM - 1:00 PM</p>
-                            <p class="event-desc">Special assembly, dance performances, and awards organized by student councils.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section class="achievements section-padding section-bg" id="achievements">
-            <div class="container">
-                <div class="section-header">
-                    <span class="subtitle">Our Laurels</span>
-                    <h2 class="section-title">Celebrating Achievements</h2>
-                </div>
-
-                <div class="achievements-grid">
-                    <!-- Achievement 1 -->
-                    <div class="achievement-card glass-card reveal-zoom">
-                        <div class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                        </div>
-                        <h3>National Level Winners</h3>
-                        <p class="achievement-tag">Science & Technology</p>
-                        <p>SSVHS Innovators club won the 1st position at the National Robotics Championship held in New Delhi, creating a clean energy drone prototype.</p>
-                    </div>
-
-                    <!-- Achievement 2 -->
-                    <div class="achievement-card glass-card reveal-zoom">
-                        <div class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                        </div>
-                        <h3>Olympiad Rank Holders</h3>
-                        <p class="achievement-tag">Mathematics & English</p>
-                        <p>5 students secured International Ranks in the top 10 in the International Olympiad of Mathematics, and 3 bagged medals in English Olympiad.</p>
-                    </div>
-
-                    <!-- Achievement 3 -->
-                    <div class="achievement-card glass-card reveal-zoom">
-                        <div class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                        </div>
-                        <h3>Sports Champions</h3>
-                        <p class="achievement-tag">Football & Swimming</p>
-                        <p>The Under-17 football team clinched the Inter-School Regional Trophy. Our swimmers bag 4 gold and 2 silver medals at National Swim meet.</p>
-                    </div>
-
-                    <!-- Achievement 4 -->
-                    <div class="achievement-card glass-card reveal-zoom">
-                        <div class="achievement-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <h3>Board Toppers</h3>
-                        <p class="achievement-tag">Academics 100% Results</p>
-                        <p>Grade XII batch achieved a perfect 100% pass record, with 85% of students securing distinctions and placement offers in premium global universities.</p>
                     </div>
                 </div>
             </div>
@@ -1008,16 +583,14 @@
                     <h2 class="section-title">What Parents & Students Say</h2>
                 </div>
 
-                <!-- Testimonials Slider Wrapper -->
                 <div class="testimonials-slider-container">
                     <div class="testimonials-slider" id="testimonialSlider">
-                        <!-- Slide 1 -->
                         <div class="testimonial-slide active">
                             <div class="testimonial-card glass-card">
                                 <div class="testimonial-rating">
                                     <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                                 </div>
-                                <p class="testimonial-text">"Sending our children to Sri Sai Vidhyalaya High School was the best educational decision we made. The academic vigor combined with a heavy focus on coding and tech innovations has prepared our kids for future challenges perfectly."</p>
+                                <p class="testimonial-text">"Sending our children to Sri Sai Vidyalaya High School was the best educational decision we made. The academic vigor combined with a heavy focus on coding and tech innovations has prepared our kids for future challenges perfectly."</p>
                                 <div class="testimonial-user">
                                     <div class="testimonial-user-info">
                                         <h4>Dr. Anish Sen</h4>
@@ -1027,7 +600,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card glass-card">
                                 <div class="testimonial-rating">
@@ -1043,7 +615,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 3 -->
                         <div class="testimonial-slide">
                             <div class="testimonial-card glass-card">
                                 <div class="testimonial-rating">
@@ -1060,7 +631,6 @@
                         </div>
                     </div>
 
-                    <!-- Navigation dots -->
                     <div class="slider-dots" id="sliderDots">
                         <span class="dot active" data-slide="0"></span>
                         <span class="dot" data-slide="1"></span>
@@ -1082,7 +652,6 @@
                 </div>
 
                 <div class="faq-accordion-wrapper">
-                    <!-- FAQ 1 -->
                     <div class="faq-item glass-card">
                         <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
                             <span>What curriculum is followed at SSVHS?</span>
@@ -1093,7 +662,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 2 -->
                     <div class="faq-item glass-card">
                         <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
                             <span>What is the teacher-to-student ratio?</span>
@@ -1104,7 +672,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 3 -->
                     <div class="faq-item glass-card">
                         <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
                             <span>Are sports and extra-curriculars mandatory?</span>
@@ -1114,33 +681,11 @@
                             <p>Yes, all students are encouraged to select at least one physical sport and one creative club activity (Robotics, Music, Drama, or Arts) per term to ensure balanced physical and mental development.</p>
                         </div>
                     </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="faq-item glass-card">
-                        <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
-                            <span>Do you provide transportation services?</span>
-                            <span class="faq-icon-indicator">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq-a4" aria-labelledby="faq-q4" role="region" hidden>
-                            <p>Yes, we operate a fleet of air-conditioned, GPS-tracked buses covering all major residential neighborhoods in the city. Each bus has a trained driver, a lady attendant, and emergency first-aid kits.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="faq-item glass-card">
-                        <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
-                            <span>How can I register for admission?</span>
-                            <span class="faq-icon-indicator">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq-a5" aria-labelledby="faq-q5" role="region" hidden>
-                            <p>You can fill out the online registration form in the Admissions section below. Post review, our counselors will contact you for a document review and interactive assessment session.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Admissions Section -->
+        <!-- Admissions Form Section -->
         <section class="admissions section-padding" id="admissions">
             <div class="container">
                 <div class="section-header">
@@ -1148,39 +693,13 @@
                     <h2 class="section-title">Registration Form (2026-27)</h2>
                 </div>
 
-                <div class="admission-form-wrapper glass-card reveal-slide-up">
-                    <div class="form-instructions-tag">Please fill out all fields carefully. Correct details are mandatory for counseling eligibility.</div>
-                    
-                    <form id="admissionForm" novalidate>
+                <div class="admissions-form-wrapper glass-card">
+                    <form id="admissionForm" action="https://formspree.io/f/mahidhar.contact@gmail.com" method="POST" novalidate>
                         <div class="form-grid">
-                            <!-- Student Details -->
                             <div class="form-group">
-                                <label for="studentName">Student Name *</label>
+                                <label for="studentName">Student Full Name *</label>
                                 <input type="text" id="studentName" name="studentName" placeholder="Enter student's full name" required>
                                 <span class="error-msg" id="studentNameError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="fatherName">Father's Name *</label>
-                                <input type="text" id="fatherName" name="fatherName" placeholder="Enter father's full name" required>
-                                <span class="error-msg" id="fatherNameError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="motherName">Mother's Name *</label>
-                                <input type="text" id="motherName" name="motherName" placeholder="Enter mother's full name" required>
-                                <span class="error-msg" id="motherNameError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="gender">Gender *</label>
-                                <select id="gender" name="gender" required>
-                                    <option value="" disabled selected>Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                <span class="error-msg" id="genderError"></span>
                             </div>
 
                             <div class="form-group">
@@ -1190,40 +709,34 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="classApplying">Class Applying For *</label>
-                                <select id="classApplying" name="classApplying" required>
-                                    <option value="" disabled selected>Select Class</option>
-                                    <option value="Pre Primary">Pre Primary (Nursery-KG)</option>
-                                    <option value="Primary">Primary (Grades I-V)</option>
-                                    <option value="Middle School">Middle School (Grades VI-VIII)</option>
-                                    <option value="High School">High School (Grades IX-X)</option>
-                                    <option value="Senior Secondary">Senior Secondary (Grade XI-XII)</option>
-                                </select>
-                                <span class="error-msg" id="classApplyingError"></span>
-                            </div>
-
-                            <div class="form-group full-width">
-                                <label for="prevSchool">Previous School Attended (If any)</label>
-                                <input type="text" id="prevSchool" name="prevSchool" placeholder="Enter previous school name and city">
-                            </div>
-
-                            <!-- Contact Details -->
-                            <div class="form-group">
-                                <label for="mobileNumber">Mobile Number *</label>
-                                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter 10-digit mobile number" required>
-                                <span class="error-msg" id="mobileNumberError"></span>
+                                <label for="parentName">Parent / Guardian Name *</label>
+                                <input type="text" id="parentName" name="parentName" placeholder="Enter parent's full name" required>
+                                <span class="error-msg" id="parentNameError"></span>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" placeholder="Enter active email address" required>
+                                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
                                 <span class="error-msg" id="emailError"></span>
                             </div>
 
-                            <div class="form-group full-width">
-                                <label for="address">Residential Address *</label>
-                                <textarea id="address" name="address" rows="3" placeholder="Enter complete residential address" required></textarea>
-                                <span class="error-msg" id="addressError"></span>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number *</label>
+                                <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" required>
+                                <span class="error-msg" id="mobileError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="classApplying">Class Applying For *</label>
+                                <select id="classApplying" name="classApplying" required>
+                                    <option value="">Select Grade</option>
+                                    <option value="nursery">Nursery / KG</option>
+                                    <option value="primary">Grade I - V</option>
+                                    <option value="middle">Grade VI - VIII</option>
+                                    <option value="secondary">Grade IX - X</option>
+                                    <option value="senior">Grade XI - XII</option>
+                                </select>
+                                <span class="error-msg" id="classApplyingError"></span>
                             </div>
                         </div>
 
@@ -1232,12 +745,15 @@
                         </div>
                     </form>
 
-                    <!-- Success Alert -->
                     <div class="form-success-alert glass-card" id="formSuccessAlert" role="alert" hidden>
                         <div class="success-icon">&checkmark;</div>
                         <h3>Application Submitted Successfully!</h3>
-                        <p>Thank you for choosing Sri Sai Vidhyalaya High School. Our admission counselor will review your application and contact you on the registered mobile number within 24 hours.</p>
-                        <button class="btn btn-primary" id="closeSuccessBtn">OK</button>
+                        <p>Your admission application details have been dispatched to <strong>mahidhar.contact@gmail.com</strong> and WhatsApp <strong>+91 9030284431</strong>.</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
+                            <a id="admissionWaBtn" href="https://wa.me/919030284431" target="_blank" class="btn btn-primary" style="background:#25D366; border-color:#25D366;">💬 Send via WhatsApp</a>
+                            <a id="admissionMailBtn" href="mailto:mahidhar.contact@gmail.com" target="_blank" class="btn btn-secondary">✉️ Send via Email</a>
+                        </div>
+                        <button class="btn btn-primary" id="closeSuccessBtn" style="margin-top: 15px;">Close</button>
                     </div>
                 </div>
             </div>
@@ -1252,7 +768,6 @@
                 </div>
 
                 <div class="contact-grid">
-                    <!-- Contact Information -->
                     <div class="contact-info-panel reveal-left">
                         <div class="info-card glass-card">
                             <div class="info-icon">
@@ -1260,7 +775,7 @@
                             </div>
                             <div class="info-text">
                                 <h4>School Campus Address</h4>
-                                <p>102, Global Education Boulevard, Sector 15, Knowledge Park, New Delhi, Pin - 110001</p>
+                                <p><a href="https://www.google.com/maps/search/?api=1&query=55V3%2B3QX,+Noonevari+Palli+Road,+Rajampet,+Andhra+Pradesh+516115" target="_blank" rel="noopener noreferrer" style="color:inherit; font-weight:600;">55V3+3QX, Noonevari Palli Road, Rajampet, Andhra Pradesh 516115</a></p>
                             </div>
                         </div>
 
@@ -1269,9 +784,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             </div>
                             <div class="info-text">
-                                <h4>Phone Support</h4>
-                                <p>Reception: +91 11 2548 9600</p>
-                                <p>Admissions Helpline: +91 99999 55500</p>
+                                <h4>Phone / WhatsApp Helpline</h4>
+                                <p>Helpline: <a href="tel:9030284431" style="color:inherit; font-weight:600;">+91 9030284431</a></p>
+                                <p>WhatsApp: <a href="https://wa.me/919030284431" target="_blank" style="color:var(--primary); font-weight:600;">Chat on WhatsApp &rarr;</a></p>
                             </div>
                         </div>
 
@@ -1281,29 +796,15 @@
                             </div>
                             <div class="info-text">
                                 <h4>Email Enquiries</h4>
-                                <p>Admissions: admissions@srisaividhyalaya.edu.in</p>
-                                <p>Office Desk: info@srisaividhyalaya.edu.in</p>
-                            </div>
-                        </div>
-
-                        <div class="info-card glass-card">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            </div>
-                            <div class="info-text">
-                                <h4>Office Timings</h4>
-                                <p>Monday to Saturday: 8:00 AM - 3:00 PM</p>
-                                <p>Closed on Sundays and Public Holidays</p>
+                                <p>Email: <a href="mailto:mahidhar.contact@gmail.com" style="color:inherit; font-weight:600;">mahidhar.contact@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contact Form + Map -->
                     <div class="contact-actions reveal-right">
-                        <!-- Contact Form -->
                         <div class="contact-form-panel glass-card">
                             <h3>Send a Quick Inquiry</h3>
-                            <form id="contactForm" novalidate>
+                            <form id="contactForm" action="https://formspree.io/f/mahidhar.contact@gmail.com" method="POST" novalidate>
                                 <div class="form-group">
                                     <label for="contactName">Name *</label>
                                     <input type="text" id="contactName" name="contactName" placeholder="Enter your full name" required>
@@ -1326,35 +827,16 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary ripple-btn" id="submitContact">Send Message</button>
                             </form>
-                            <!-- Success Alert -->
+
                             <div class="form-success-alert glass-card" id="contactSuccessAlert" role="alert" hidden>
                                 <div class="success-icon">&checkmark;</div>
-                                <h3>Message Sent!</h3>
-                                <p>We have received your message. A representative from our helpdesk will respond back to you shortly.</p>
-                                <button class="btn btn-primary" id="closeContactSuccessBtn">Close</button>
-                            </div>
-                        </div>
-
-                        <!-- Embedded Map Placeholder -->
-                        <div class="map-container-card glass-card">
-                            <div class="map-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"></path><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
-                                <h4>Interactive Location Map</h4>
-                            </div>
-                            <div class="map-placeholder">
-                                <!-- Styled visual Map Placeholder, incorporating a mock map to feel extremely premium -->
-                                <div class="mock-map">
-                                    <div class="mock-map-bg"></div>
-                                    <div class="mock-map-marker">
-                                        <div class="pin"></div>
-                                        <div class="pulse"></div>
-                                    </div>
-                                    <div class="mock-map-pop">
-                                        <h5>SSVHS Campus</h5>
-                                        <p>Click below to open in Google Maps</p>
-                                        <a href="https://maps.google.com/?q=Knowledge+Park+New+Delhi" target="_blank" class="btn btn-text">Get Directions &rarr;</a>
-                                    </div>
+                                <h3>Inquiry Sent Successfully!</h3>
+                                <p>Your inquiry details have been dispatched to <strong>mahidhar.contact@gmail.com</strong> and WhatsApp <strong>+91 9030284431</strong>.</p>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
+                                    <a id="contactWaBtn" href="https://wa.me/919030284431" target="_blank" class="btn btn-primary" style="background:#25D366; border-color:#25D366;">💬 Send via WhatsApp</a>
+                                    <a id="contactMailBtn" href="mailto:mahidhar.contact@gmail.com" target="_blank" class="btn btn-secondary">✉️ Send via Email</a>
                                 </div>
+                                <button class="btn btn-primary" id="closeContactSuccessBtn" style="margin-top: 15px;">Close</button>
                             </div>
                         </div>
                     </div>
@@ -1366,22 +848,24 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
-            <!-- Col 1: About -->
             <div class="footer-col reveal-fade">
                 <a href="#home" class="footer-logo">
                     <span class="logo-icon">SSV</span>
-                    <span class="logo-title">Sri Sai Vidhyalaya</span>
+                    <span class="logo-title">Sri Sai Vidyalaya</span>
                 </a>
-                <p class="footer-desc">Sri Sai Vidhyalaya High School (SSVHS) is dedicated to nurturing academic brilliance, ethical strength, and social leadership. We prepare students for international success.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <p class="footer-desc">Sri Sai Vidyalaya High School (SSVHS) is dedicated to nurturing academic brilliance, ethical strength, and social leadership. We prepare students for international success.</p>
+                <div class="footer-social-buttons">
+                    <a href="https://www.youtube.com/@SRISAIVIDYALAYAHIGHSCHOOLRJPT" target="_blank" rel="noopener noreferrer" class="social-badge youtube-badge" aria-label="YouTube Channel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://www.instagram.com/srisaividyalayaschoolrjpt/" target="_blank" rel="noopener noreferrer" class="social-badge insta-badge" aria-label="Instagram Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Instagram</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Col 2: Quick Links -->
             <div class="footer-col reveal-fade">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
@@ -1393,65 +877,63 @@
                 </ul>
             </div>
 
-            <!-- Col 3: Useful Links -->
             <div class="footer-col reveal-fade">
                 <h4>Useful Links</h4>
                 <ul class="footer-links">
                     <li><a href="#faculty">Faculty Details</a></li>
                     <li><a href="#gallery">Photo Gallery</a></li>
+                    <li><a href="#awards">School Awards</a></li>
                     <li><a href="#notice-board">Latest Circulars</a></li>
-                    <li><a href="#events">Events Calendar</a></li>
                     <li><a href="#faq">FAQ Section</a></li>
                 </ul>
             </div>
 
-            <!-- Col 4: Newsletter -->
             <div class="footer-col reveal-fade">
-                <h4>Newsletter</h4>
-                <p>Subscribe to receive regular updates, circulars, and newsletter digests.</p>
-                <form id="newsletterForm" class="newsletter-form" novalidate>
-                    <input type="email" id="newsletterEmail" placeholder="Enter email address" required>
-                    <button type="submit" class="btn btn-primary" aria-label="Subscribe">&#10148;</button>
-                </form>
-                <span class="newsletter-msg" id="newsletterMsg"></span>
+                <h4>Follow Our Socials</h4>
+                <p style="font-size: 13px; color: #94a3b8; margin-bottom: 16px;">Stay updated with official events, celebrations & announcements:</p>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="https://www.youtube.com/@SRISAIVIDYALAYAHIGHSCHOOLRJPT" target="_blank" rel="noopener noreferrer" class="btn btn-youtube" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #FF0000; color: #ffffff; padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 700; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <span>Subscribe on YouTube</span>
+                    </a>
+                    <a href="https://www.instagram.com/srisaividyalayaschoolrjpt/" target="_blank" rel="noopener noreferrer" class="btn btn-insta" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #ffffff; padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 700; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>Follow on Instagram</span>
+                    </a>
+                </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="container footer-bottom-flex">
-                <p>&copy; 2026 Sri Sai Vidhyalaya High School. All Rights Reserved.</p>
-                <p>Designed with &hearts; for Bright Minds.</p>
+                <p>&copy; 2026 Sri Sai Vidyalaya High School. All Rights Reserved.</p>
+                <div class="footer-bottom-socials" style="display: flex; gap: 16px; align-items: center;">
+                    <a href="https://www.youtube.com/@SRISAIVIDYALAYAHIGHSCHOOLRJPT" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; transition: color 0.3s ease;" aria-label="YouTube Channel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/srisaividyalayaschoolrjpt/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; transition: color 0.3s ease;" aria-label="Instagram Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal" aria-hidden="true" role="dialog">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
 
-    <!-- Lightbox for Gallery -->
-    <div class="lightbox" id="galleryLightbox" role="dialog" aria-label="Image View" aria-hidden="true" hidden>
-        <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous Image">&lsaquo;</button>
-        <div class="lightbox-content">
-            <img src="" alt="" id="lightboxImg">
-            <div class="lightbox-caption" id="lightboxCaption">Caption text</div>
-        </div>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next Image">&rsaquo;</button>
-    </div>
-
-    <!-- Academic Card Read More Modal -->
-    <div class="academic-modal" id="academicModal" role="dialog" aria-hidden="true" hidden>
-        <div class="academic-modal-content glass-card">
-            <button class="academic-modal-close" id="academicModalClose" aria-label="Close details">&times;</button>
-            <div id="academicModalBody">
-                <!-- Injected dynamically based on program clicked -->
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript File -->
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
