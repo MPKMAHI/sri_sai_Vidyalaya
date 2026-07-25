@@ -2854,6 +2854,7 @@ body.dark-theme .countdown-item {
     .contact-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .events-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* --------------------------------------------------------------------------
@@ -2943,6 +2944,9 @@ body.dark-theme .countdown-item {
 
     .why-grid { grid-template-columns: 1fr; }
     .form-grid { grid-template-columns: 1fr; }
+    .events-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .mega-event-card { padding: 30px 15px !important; margin: 20px auto 30px auto !important; }
+    .event-card-v2 { padding: 16px !important; }
     .form-group.full-width { grid-column: span 1; }
     .countdown-container { gap: 10px; flex-wrap: wrap; justify-content: center; }
     .countdown-box { min-width: 65px; padding: 8px 12px; }
