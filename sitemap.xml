@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Home Page -->
     <url>
         <loc>https://srisaividyalaya.in/</loc>
         <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <!-- About Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#about</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Academics Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#academics</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Facilities Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#facilities</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Faculty Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#faculty</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Gallery Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#gallery</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Awards Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#awards</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Notice Board Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#notice-board</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Events Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#events</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Testimonials Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#testimonials</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <!-- Contact Section -->
+    <url>
+        <loc>https://srisaividyalaya.in/#contact</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
