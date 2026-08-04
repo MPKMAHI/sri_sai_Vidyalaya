@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -685,26 +685,17 @@
                     <h2 class="section-title">Notice Board & Announcements</h2>
                 </div>
 
-                <div class="notice-grid">
-                    <div class="notice-card glass-card reveal-slide-up">
-                        <div class="notice-date"><span>24</span> JUL</div>
-                        <div class="notice-content">
-                            <h4>Admissions Open for Academic Year 2026-27</h4>
-                            <p>Online registrations for Nursery to Grade XI are now live. Submit forms online before August 15th.</p>
-                        </div>
-                    </div>
-                    <div class="notice-card glass-card reveal-slide-up">
-                        <div class="notice-date"><span>18</span> JUL</div>
-                        <div class="notice-content">
-                            <h4>SSVHS Innovators Robotics Championship Win</h4>
-                            <p>Our robotics team secured 1st rank at the National Robotics Expo held in New Delhi.</p>
-                        </div>
-                    </div>
-                    <div class="notice-card glass-card reveal-slide-up">
-                        <div class="notice-date"><span>05</span> JUL</div>
-                        <div class="notice-content">
-                            <h4>Parent-Teacher Meeting (PTM) Schedule</h4>
-                            <p>Mid-term PTM is scheduled for Saturday. Slot details sent to registered parent mobile numbers.</p>
+                <div class="notice-syllabus-container reveal-slide-up" style="max-width: 800px; margin: 0 auto;">
+                    <div class="notice-card glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 30px; gap: 24px; border-radius: 24px;">
+                        <div class="notice-content" style="width: 100%;">
+                            <span class="notice-tag" style="background: var(--primary); color: #ffffff; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 16px;">New Announcement</span>
+                            <h3 style="font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; letter-spacing: -0.5px;">JEE Mains & Advanced Syllabus (School Coaching Program)</h3>
+                            <p style="font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); max-width: 620px; margin: 0 auto 24px auto;">
+                                The detailed syllabus and exam schedule for the upcoming JEE Mains and Advanced training program conducted within the school premises. Click on the image below to view or download it in full screen.
+                            </p>
+                            <div class="syllabus-image-wrapper" style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); max-width: 480px; margin: 0 auto; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: zoom-in;">
+                                <img src="./images/jee_syllabus.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80';" alt="JEE Mains & Advanced Syllabus" class="lightbox-trigger" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1145,6 +1136,6 @@
     </button>
 
     <!-- Script -->
-    <script src="script.js?v=3.1"></script>
+    <script src="script.js?v=3.2"></script>
 </body>
 </html>

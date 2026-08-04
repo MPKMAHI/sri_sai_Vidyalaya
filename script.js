@@ -1010,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (awardsLightbox && awardsLightboxImg && awardsLightboxClose) {
         // Select all images in awards and gallery sections
-        const triggers = document.querySelectorAll('.award-img, .gallery-item img');
+        const triggers = document.querySelectorAll('.award-img, .gallery-item img, .lightbox-trigger');
         
         triggers.forEach(img => {
             img.style.cursor = 'zoom-in';
