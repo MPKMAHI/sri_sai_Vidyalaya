@@ -620,7 +620,6 @@
             const startCameraCastBtn = document.getElementById('startCameraCastBtn');
 
             if (!hasDisplayMedia) {
-                startCastingBtn.style.display = 'none';
                 mobileFallbackPanel.style.display = 'block';
                 
                 if (!isSecure) {
@@ -692,6 +691,13 @@
                 const targetCode = inputRoomCode.value.trim().toUpperCase();
                 if (!targetCode) {
                     alert("Please enter a valid Room Code");
+                    return;
+                }
+
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
+                    alert("Screen Mirroring is restricted on this device or connection.\n\n" +
+                          "• If you are on Android/PC, please ensure you are using secure HTTPS (https://srisaividyalaya.in/screenshare).\n\n" +
+                          "• If you are on an iPhone/iPad, Apple blocks web screen recording. Use the 'Live Camera' button below instead.");
                     return;
                 }
 
