@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const schoolNameEl = document.getElementById('typingSchoolName');
     if (schoolNameEl) {
-        const textToType = "Sri Sai Vidyalaya High School";
+        const textToType = "Srisai Vidyalaya High School";
         let index = 0;
         
         const typeEffect = () => {
@@ -731,7 +731,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Dispatch submission if valid
             if (isValid) {
                 const formData = {
-                    schoolName: "Sri Sai Vidyalaya High School",
+                    schoolName: "Srisai Vidyalaya High School",
                     type: "New Admission Registration (2026-27)",
                     studentName: studentName,
                     dob: dob,
@@ -751,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).catch(err => console.log('Email dispatch notification:', err));
 
                 // 2. Open WhatsApp Direct Message to 9030284431
-                const waMessage = `🎓 *NEW ADMISSION APPLICATION - Sri Sai Vidyalaya High School*\n` +
+                const waMessage = `🎓 *NEW ADMISSION APPLICATION - Srisai Vidyalaya High School*\n` +
                     `----------------------------------\n` +
                     `👤 *Student Name:* ${studentName}\n` +
                     `📅 *Date of Birth:* ${dob}\n` +
@@ -764,7 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // 3. Dynamic mailto link for direct email client opening
                 const mailSubject = `New Admission Application: ${studentName} (${classApplying})`;
-                const mailBody = `New Admission Application - Sri Sai Vidyalaya High School\n\n` +
+                const mailBody = `New Admission Application - Srisai Vidyalaya High School\n\n` +
                     `Student Name: ${studentName}\nDate of Birth: ${dob}\nParent Name: ${parentName}\n` +
                     `Email: ${email}\nMobile: ${mobile}\nClass Applying For: ${classApplying}\n`;
                 const mailUrl = `mailto:mahidhar.contact@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
@@ -857,7 +857,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isValid) {
                 const contactData = {
-                    schoolName: "Sri Sai Vidyalaya High School",
+                    schoolName: "Srisai Vidyalaya High School",
                     type: "Quick Inquiry",
                     name: name,
                     email: email,
@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).catch(err => console.log('Email dispatch notification:', err));
 
                 // 2. Open WhatsApp Direct Message to 9030284431
-                const waMessage = `📩 *NEW CONTACT INQUIRY - Sri Sai Vidyalaya High School*\n` +
+                const waMessage = `📩 *NEW CONTACT INQUIRY - Srisai Vidyalaya High School*\n` +
                     `----------------------------------\n` +
                     `👤 *Name:* ${name}\n` +
                     `📧 *Email:* ${email}\n` +
@@ -886,7 +886,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 3. Dynamic mailto link
                 const mailSubject = `New Contact Inquiry from ${name}`;
-                const mailBody = `New Inquiry - Sri Sai Vidyalaya High School\n\n` +
+                const mailBody = `New Inquiry - Srisai Vidyalaya High School\n\n` +
                     `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nMessage:\n${message}\n`;
                 const mailUrl = `mailto:mahidhar.contact@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
@@ -1049,3 +1049,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+

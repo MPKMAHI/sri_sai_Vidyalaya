@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srisai Vidyalaya | P2P Screen Share & Remote Pointer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- PeerJS CDN -->
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <!-- QRCode CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #818cf8;
+            --accent: #f59e0b;
+            --bg-base: #0f172a;
+            --bg-surface: rgba(30, 41, 59, 0.6);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --success: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Container */
+        .glass-container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--bg-surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Main Mode Selection Panels */
+        .mode-selection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .mode-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-4px);
+            background: rgba(79, 70, 229, 0.08);
+            border-color: var(--primary-light);
+        }
+
+        .mode-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mode-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .mode-card p {
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        /* View Panels (Hidden by default) */
+        .panel {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TV Panel elements */
+        .room-code-display {
+            font-size: 48px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .qr-wrapper {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #64748b;
+        }
+
+        .status-active .status-dot {
+            background: var(--success);
+            box-shadow: 0 0 10px var(--success);
+        }
+
+        .status-connecting .status-dot {
+            background: var(--accent);
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+
+        /* Screen Streaming Viewport */
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #020617;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Canvas drawing layer */
+        .overlay-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: crosshair;
+        }
+
+        /* Mobile Controller Form styles */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 320px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 10px rgba(129, 140, 248, 0.2);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #6366f1);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Remote control action tools bar */
+        .controls-toolbar {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover .controls-toolbar {
+            opacity: 1;
+        }
+
+        .tool-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .tool-btn:hover, .tool-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .pointer-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(239, 68, 68, 0.7);
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px #ef4444;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            display: none;
+        }
+
+        /* Mobile casting layout */
+        .casting-active-card {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 24px;
+            border-radius: 16px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .mode-selection {
+                grid-template-columns: 1fr;
+            }
+            .glass-container {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <h1>Srisai Screen Share</h1>
+        <p class="subtitle">Mirror your mobile phone to digital classroom TVs instantly</p>
+
+        <!-- Mode Selection View -->
+        <div id="selectionModeView">
+            <div class="mode-selection">
+                <div class="mode-card" id="selectTvBtn">
+                    <div class="mode-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="15" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+                    </div>
+                    <h3>Classroom Digital TV</h3>
+                    <p>Select this mode on the school TV to generate a Room Code & display incoming casting streams.</p>
+                </div>
+                <div class="mode-card" id="selectMobileBtn">
+                    <div class="mode-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <h3>Mobile Presenter</h3>
+                    <p>Select this mode on your mobile phone to share your screen or present images.</p>
+                </div>
+            </div>
+            <a href="../" class="btn btn-secondary">Back to Main Website</a>
+        </div>
+
+        <!-- TV Receiver View -->
+        <div id="tvViewPanel" class="panel">
+            <div class="status-badge" id="tvStatusBadge">
+                <span class="status-dot"></span>
+                <span id="tvStatusText">Initializing Peer Network...</span>
+            </div>
+            
+            <div id="codeConfigBox">
+                <p style="color: var(--text-secondary);">Scan this QR Code on your Mobile to connect instantly:</p>
+                <div class="qr-wrapper">
+                    <div id="qrCodeContainer"></div>
+                </div>
+                <p style="color: var(--text-secondary);">Or enter this Room Code in the Mobile Presenter panel:</p>
+                <div class="room-code-display" id="tvRoomCode">----</div>
+            </div>
+
+            <!-- Cast Video Output Viewport -->
+            <div class="video-container" id="videoViewport" style="display: none;">
+                <video id="tvVideoPlayer" autoplay playsinline></video>
+                <!-- Video Controls overlay -->
+                <div class="controls-toolbar">
+                    <button class="tool-btn" id="toolFullScreenBtn" title="Full Screen View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 3 6 6M9 21l-6-6M21 3l-6 6M3 21l6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" onclick="window.location.reload()">Exit TV Mode</button>
+        </div>
+
+        <!-- Mobile Presenter View -->
+        <div id="mobileViewPanel" class="panel">
+            <div class="status-badge" id="mobileStatusBadge">
+                <span class="status-dot"></span>
+                <span id="mobileStatusText">Disconnected</span>
+            </div>
+
+            <div id="connectionForm">
+                <div class="form-group">
+                    <label for="inputRoomCode">Enter TV Room Code</label>
+                    <input type="text" id="inputRoomCode" placeholder="SSV-XXXX" required>
+                </div>
+                <button class="btn btn-primary" id="startCastingBtn">Start Screencast Mirroring</button>
+            </div>
+
+            <!-- Active Casting Feedback card -->
+            <div class="casting-active-card" id="castingActiveCard">
+                <h3 style="color: var(--success); margin-bottom: 8px;">Casting Active!</h3>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5; margin-bottom: 16px;">
+                    Your screen is currently casting to the TV. You can switch to other tabs, apps, or slides. 
+                    <br><strong style="color: #ffffff;">Keep this tab open in the background to sustain mirroring.</strong>
+                </p>
+                
+
+                
+                <button class="btn btn-secondary" onclick="window.location.reload()" style="margin-top: 16px;">Stop Mirroring</button>
+            </div>
+
+            <button class="btn btn-secondary" onclick="window.location.reload()">Exit Caster Mode</button>
+        </div>
+
+    </div>
+
+    <!-- P2P Core Javascript -->
+    <script>
+        // Check url query parameters for quick joins
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlRoom = urlParams.get('room');
+        const urlMode = urlParams.get('mode');
+
+        const selectionModeView = document.getElementById('selectionModeView');
+        const tvViewPanel = document.getElementById('tvViewPanel');
+        const mobileViewPanel = document.getElementById('mobileViewPanel');
+
+        const selectTvBtn = document.getElementById('selectTvBtn');
+        const selectMobileBtn = document.getElementById('selectMobileBtn');
+
+        // Global Peer variables
+        let peer = null;
+        let dataConnection = null;
+        let mediaCall = null;
+        let localStream = null;
+
+        // Auto routing based on URL params
+        window.addEventListener('DOMContentLoaded', () => {
+            if (urlMode === 'send' && urlRoom) {
+                initMobilePresenter(urlRoom);
+            }
+        });
+
+        selectTvBtn.addEventListener('click', () => {
+            initTvReceiver();
+        });
+
+        selectMobileBtn.addEventListener('click', () => {
+            initMobilePresenter();
+        });
+
+        // Generate a random 4-digit numeric code
+        function generateRoomCode() {
+            return 'SSV-' + Math.floor(1000 + Math.random() * 9000);
+        }
+
+        // ==========================================================================
+        // Classroom TV Receiver Mode
+        // ==========================================================================
+        function initTvReceiver() {
+            selectionModeView.style.display = 'none';
+            tvViewPanel.style.display = 'block';
+            
+            const roomCode = generateRoomCode();
+            document.getElementById('tvRoomCode').textContent = roomCode;
+
+            const tvStatusBadge = document.getElementById('tvStatusBadge');
+            const tvStatusText = document.getElementById('tvStatusText');
+
+            // Generate join URL for QR Code
+            const currentUrl = window.location.origin + window.location.pathname;
+            const joinUrl = `${currentUrl}?room=${roomCode}&mode=send`;
+
+            // Render QR Code
+            document.getElementById('qrCodeContainer').innerHTML = '';
+            new QRCode(document.getElementById('qrCodeContainer'), {
+                text: joinUrl,
+                width: 160,
+                height: 160,
+                colorDark : "#0f172a",
+                colorLight : "#ffffff"
+            });
+
+            // Initialize PeerJS as Receiver
+            const peerId = `srisai-screenshare-${roomCode}`;
+            peer = new Peer(peerId, {
+                host: '0.peerjs.com',
+                port: 443,
+                secure: true
+            });
+
+            peer.on('open', () => {
+                tvStatusBadge.className = "status-badge status-connecting";
+                tvStatusText.textContent = "Ready - Awaiting Connection";
+            });
+
+            peer.on('error', (err) => {
+                console.error("PeerJS Error:", err);
+                tvStatusBadge.className = "status-badge";
+                tvStatusText.textContent = "Network Error - Restarting...";
+            });
+
+
+
+            // Handle incoming media call (Video Cast stream)
+            peer.on('call', (call) => {
+                mediaCall = call;
+                tvStatusBadge.className = "status-badge status-active";
+                tvStatusText.textContent = "Connecting stream...";
+
+                call.answer(); // Answer without stream (TV is only a receiver)
+                
+                call.on('stream', (remoteStream) => {
+                    document.getElementById('codeConfigBox').style.display = 'none';
+                    document.getElementById('videoViewport').style.display = 'block';
+                    
+                    const tvVideoPlayer = document.getElementById('tvVideoPlayer');
+                    tvVideoPlayer.srcObject = remoteStream;
+                    
+                    tvStatusText.textContent = "Live Screencasting Active";
+                    
+                    // Setup fullscreen button action
+                    setupFullscreenToggle();
+                });
+
+                call.on('close', () => {
+                    tvStatusBadge.className = "status-badge status-connecting";
+                    tvStatusText.textContent = "Casting stopped.";
+                    document.getElementById('videoViewport').style.display = 'none';
+                    document.getElementById('codeConfigBox').style.display = 'block';
+                });
+            });
+        }
+
+        // Setup video container fullscreen action
+        function setupFullscreenToggle() {
+            const videoViewport = document.getElementById('videoViewport');
+            
+            // Fullscreen click handler
+            document.getElementById('toolFullScreenBtn').addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    videoViewport.requestFullscreen().catch(err => console.log(err));
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+        }
+
+
+        // ==========================================================================
+        // Mobile Presenter Caster Mode
+        // ==========================================================================
+        function initMobilePresenter(prefilledRoomCode = '') {
+            selectionModeView.style.display = 'none';
+            mobileViewPanel.style.display = 'block';
+
+            const mobileStatusBadge = document.getElementById('mobileStatusBadge');
+            const mobileStatusText = document.getElementById('mobileStatusText');
+            const startCastingBtn = document.getElementById('startCastingBtn');
+            const inputRoomCode = document.getElementById('inputRoomCode');
+
+            if (prefilledRoomCode) {
+                inputRoomCode.value = prefilledRoomCode;
+            }
+
+            // Initialize PeerJS as Presenter
+            peer = new Peer({
+                host: '0.peerjs.com',
+                port: 443,
+                secure: true
+            });
+
+            peer.on('open', () => {
+                mobileStatusBadge.className = "status-badge status-connecting";
+                mobileStatusText.textContent = "Ready to Cast";
+            });
+
+            startCastingBtn.addEventListener('click', async () => {
+                const targetCode = inputRoomCode.value.trim().toUpperCase();
+                if (!targetCode) {
+                    alert("Please enter a valid Room Code");
+                    return;
+                }
+
+                mobileStatusText.textContent = "Initiating screenshare...";
+
+                try {
+                    // Capture mobile screen (attempting with system audio)
+                    try {
+                        localStream = await navigator.mediaDevices.getDisplayMedia({
+                            video: {
+                                cursor: "always",
+                                displaySurface: "monitor"
+                            },
+                            audio: true
+                        });
+                    } catch (audioErr) {
+                        console.log("Audio sharing not supported/denied, falling back to video-only:", audioErr);
+                        localStream = await navigator.mediaDevices.getDisplayMedia({
+                            video: {
+                                cursor: "always",
+                                displaySurface: "monitor"
+                            },
+                            audio: false
+                        });
+                    }
+
+                    // Establish P2P connections to Classroom TV
+                    const targetPeerId = `srisai-screenshare-${targetCode}`;
+                    
+                    // Make WebRTC Video Call (stream mobile screen)
+                    mediaCall = peer.call(targetPeerId, localStream);
+
+                    // Show casting controls
+                    document.getElementById('connectionForm').style.display = 'none';
+                    document.getElementById('castingActiveCard').style.display = 'block';
+                    mobileStatusBadge.className = "status-badge status-active";
+                    mobileStatusText.textContent = "Casting Screen Live";
+
+                    // Handle screen share stop via browser native toolbar
+                    localStream.getVideoTracks()[0].addEventListener('ended', () => {
+                        window.location.reload();
+                    });
+
+                } catch (error) {
+                    console.error("Casting capture error:", error);
+                    alert("Casting failed: " + error.message + "\nMake sure you granted screen recording permissions.");
+                    mobileStatusText.textContent = "Casting Failed";
+                    mobileStatusBadge.className = "status-badge";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
