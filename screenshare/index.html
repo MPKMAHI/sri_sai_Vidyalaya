@@ -704,24 +704,34 @@
                 mobileStatusText.textContent = "Initiating screenshare...";
 
                 try {
-                    // Capture mobile screen (attempting with system audio)
-                    try {
+                    // Detect mobile device to bypass desktop-only capture audio constraints
+                    const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                    
+                    if (isMobileDevice) {
+                        // Mobile Chrome screen share prompt request (always video-only to ensure gesture validation succeeds)
                         localStream = await navigator.mediaDevices.getDisplayMedia({
-                            video: {
-                                cursor: "always",
-                                displaySurface: "monitor"
-                            },
-                            audio: true
+                            video: true
                         });
-                    } catch (audioErr) {
-                        console.log("Audio sharing not supported/denied, falling back to video-only:", audioErr);
-                        localStream = await navigator.mediaDevices.getDisplayMedia({
-                            video: {
-                                cursor: "always",
-                                displaySurface: "monitor"
-                            },
-                            audio: false
-                        });
+                    } else {
+                        // Desktop/PC optimization: attempt capturing system audio
+                        try {
+                            localStream = await navigator.mediaDevices.getDisplayMedia({
+                                video: {
+                                    cursor: "always",
+                                    displaySurface: "monitor"
+                                },
+                                audio: true
+                            });
+                        } catch (audioErr) {
+                            console.log("Audio sharing not supported/denied, falling back to video-only:", audioErr);
+                            localStream = await navigator.mediaDevices.getDisplayMedia({
+                                video: {
+                                    cursor: "always",
+                                    displaySurface: "monitor"
+                                },
+                                audio: false
+                            });
+                        }
                     }
 
                     // Establish P2P connections to Classroom TV
