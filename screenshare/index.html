@@ -624,11 +624,11 @@
                 mobileFallbackPanel.style.display = 'block';
                 
                 if (!isSecure) {
-                    fallbackReasonText.textContent = "Your connection is not secure (HTTP). Browsers block screen sharing and camera capture unless using HTTPS.";
+                    fallbackReasonText.innerHTML = "🔴 <strong>Unsecure Connection (HTTP):</strong> Browsers disable screen mirroring unless the site is loaded over HTTPS. Click the button below to switch to secure HTTPS and enable screen sharing.";
                     btnRedirectHttps.href = window.location.href.replace("http://", "https://");
                     btnRedirectHttps.style.display = 'inline-flex';
                 } else {
-                    fallbackReasonText.textContent = "Screen recording is not supported on this mobile device/browser (typical for iPhones/iOS Safari). You can still stream your live camera to the TV as a visualizer!";
+                    fallbackReasonText.innerHTML = "ℹ️ <strong>Screen Sharing Restricted on iOS (iPhone/iPad):</strong> Apple blocks web browsers from sharing mobile screens due to system sandboxing. <br><br><strong>You can still stream your live mobile camera</strong> as a visualizer to present textbooks or workbooks onto the TV!";
                 }
             }
 
