@@ -429,6 +429,18 @@
                     <input type="text" id="inputRoomCode" placeholder="SSV-XXXX" required>
                 </div>
                 <button class="btn btn-primary" id="startCastingBtn">Start Screencast Mirroring</button>
+                
+                <!-- Fallback / HTTPS warning panel -->
+                <div id="mobileFallbackPanel" style="display: none; margin-top: 24px; padding: 18px; border-radius: 12px; border: 1px dashed rgba(245, 158, 11, 0.2); background: rgba(245, 158, 11, 0.05); text-align: left;">
+                    <h4 style="color: var(--accent); margin-bottom: 6px; font-size: 14px;">⚠️ Device Compatibility Notice</h4>
+                    <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;" id="fallbackReasonText">
+                        Mobile browsers (like iOS Safari) or non-secure pages do not support screen recording.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="#" class="btn btn-primary" id="btnRedirectHttps" style="display: none; padding: 10px; font-size: 13px;">Switch to Secure HTTPS</a>
+                        <button class="btn btn-primary" id="startCameraCastBtn" style="padding: 10px; font-size: 13px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);">Use Mobile Camera as Live Visualizer</button>
+                    </div>
+                </div>
             </div>
 
             <!-- Active Casting Feedback card -->
@@ -598,6 +610,28 @@
                 inputRoomCode.value = prefilledRoomCode;
             }
 
+            // Compatibility and secure context verification checks
+            const isSecure = window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const hasDisplayMedia = !!(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia);
+
+            const mobileFallbackPanel = document.getElementById('mobileFallbackPanel');
+            const fallbackReasonText = document.getElementById('fallbackReasonText');
+            const btnRedirectHttps = document.getElementById('btnRedirectHttps');
+            const startCameraCastBtn = document.getElementById('startCameraCastBtn');
+
+            if (!hasDisplayMedia) {
+                startCastingBtn.style.display = 'none';
+                mobileFallbackPanel.style.display = 'block';
+                
+                if (!isSecure) {
+                    fallbackReasonText.textContent = "Your connection is not secure (HTTP). Browsers block screen sharing and camera capture unless using HTTPS.";
+                    btnRedirectHttps.href = window.location.href.replace("http://", "https://");
+                    btnRedirectHttps.style.display = 'inline-flex';
+                } else {
+                    fallbackReasonText.textContent = "Screen recording is not supported on this mobile device/browser (typical for iPhones/iOS Safari). You can still stream your live camera to the TV as a visualizer!";
+                }
+            }
+
             // Initialize PeerJS as Presenter
             peer = new Peer({
                 host: '0.peerjs.com',
@@ -608,6 +642,50 @@
             peer.on('open', () => {
                 mobileStatusBadge.className = "status-badge status-connecting";
                 mobileStatusText.textContent = "Ready to Cast";
+            });
+
+            // Camera casting visualizer click handler
+            startCameraCastBtn.addEventListener('click', async () => {
+                const targetCode = inputRoomCode.value.trim().toUpperCase();
+                if (!targetCode) {
+                    alert("Please enter a valid Room Code");
+                    return;
+                }
+
+                mobileStatusText.textContent = "Initiating camera stream...";
+
+                try {
+                    localStream = await navigator.mediaDevices.getUserMedia({
+                        video: {
+                            facingMode: "environment",
+                            width: { ideal: 1280 },
+                            height: { ideal: 720 }
+                        },
+                        audio: false // prevent howling feedback
+                    });
+
+                    const targetPeerId = `srisai-screenshare-${targetCode}`;
+                    mediaCall = peer.call(targetPeerId, localStream);
+
+                    document.getElementById('connectionForm').style.display = 'none';
+                    document.getElementById('castingActiveCard').style.display = 'block';
+                    
+                    document.getElementById('castingActiveCard').querySelector('h3').textContent = "Camera Stream Active!";
+                    document.getElementById('castingActiveCard').querySelector('p').innerHTML = 
+                        `Your mobile camera is currently streaming live to the TV. Point your camera at a workbook, textbook, or experiment. <br><strong style="color: #ffffff;">Keep this tab open.</strong>`;
+                    
+                    mobileStatusBadge.className = "status-badge status-active";
+                    mobileStatusText.textContent = "Streaming Live Camera";
+
+                    localStream.getVideoTracks()[0].addEventListener('ended', () => {
+                        window.location.reload();
+                    });
+
+                } catch (error) {
+                    console.error("Camera stream capture error:", error);
+                    alert("Camera capture failed: " + error.message + "\nMake sure you granted camera permissions.");
+                    mobileStatusText.textContent = "Camera Stream Failed";
+                }
             });
 
             startCastingBtn.addEventListener('click', async () => {
