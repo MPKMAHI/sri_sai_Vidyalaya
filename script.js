@@ -413,7 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (category === 'all' || itemCategory === category) {
                     item.style.display = 'block';
                     item.classList.add('reveal-zoom', 'revealed');
-                    activeImages.push(item);
+                    if (!item.classList.contains('no-lightbox')) {
+                        activeImages.push(item);
+                    }
                 } else {
                     item.style.display = 'none';
                     item.classList.remove('revealed');
@@ -472,6 +474,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Bind clicks on gallery item wrappers
         galleryItems.forEach(item => {
+            if (item.classList.contains('no-lightbox')) return;
+            
             item.addEventListener('click', () => {
                 // Find current item index within the active filtered array
                 const index = activeImages.indexOf(item);
