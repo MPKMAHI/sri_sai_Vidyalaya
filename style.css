@@ -1193,10 +1193,14 @@ body.light-theme .stats {
     height: 250px;
 }
 
+.gallery-item.video-featured {
+    height: 340px;
+}
+
 @media (min-width: 768px) {
     .gallery-item.video-featured {
         grid-column: span 2;
-        height: 380px;
+        height: 440px;
     }
 }
 
