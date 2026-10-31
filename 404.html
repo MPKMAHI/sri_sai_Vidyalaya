@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Sai Vidyalaya — Redirecting</title>
+    <title>Sri Sai Vidyalaya High School</title>
     <script>
         (function() {
             var pathname = window.location.pathname;
-            var search = window.location.search || '';
-            var hash = window.location.hash || '';
-
-            // Handle /app or /app/
-            if (pathname === '/app' || pathname === '/app/') {
-                window.location.replace('/app/' + search + hash);
+            // Prevent recursive redirect loop:
+            if (pathname === '/app') {
+                window.location.replace('/app/' + window.location.search + window.location.hash);
                 return;
             }
-            // Handle /app/subroute
-            if (pathname.startsWith('/app/')) {
+            if (pathname.startsWith('/app/') && pathname !== '/app/' && !pathname.endsWith('index.html')) {
                 var sub = pathname.replace(/^\/app\//, '');
-                window.location.replace('/app/#/' + sub + search + hash);
+                window.location.replace('/app/#' + sub + window.location.search + window.location.hash);
                 return;
             }
-            // Fallback to home
-            window.location.replace('/' + search + hash);
         })();
     </script>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; padding: 48px; background: #090d16; color: #f8fafc;">
     <h2 style="margin-bottom: 8px; font-weight: 700;">Sri Sai Vidyalaya High School</h2>
-    <p style="color: #94a3b8;">Redirecting to <a href="/app/" style="color: #06b6d4; text-decoration: none; font-weight: 600;">SSV SchoolSphere Application</a>...</p>
+    <p style="color: #94a3b8;">Connecting to SSV SchoolSphere...</p>
+    <p style="margin-top: 24px;">
+        <a href="/app/" style="display: inline-block; padding: 12px 24px; background: #4f46e5; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);">Launch SSV SchoolSphere Portal →</a>
+    </p>
+    <p style="margin-top: 12px;">
+        <a href="/" style="color: #64748b; text-decoration: none; font-size: 13px;">Return to Main Website</a>
+    </p>
 </body>
 </html>
-
